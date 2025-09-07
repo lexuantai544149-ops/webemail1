@@ -6,25 +6,46 @@ body {
 }
 
 h1 {
+    color: green;
+}
+
+h2 {
     color: teal;
+    margin-top: 1em;
+}
+
+.container {
+    width: 600px;
+    margin-left: 2em;   /* căn trái */
+    text-align: left;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+/* căn label và input rõ ràng */
+.form-group {
+    margin-bottom: 0.8em;
 }
 
 label {
-    float: left;
-    width: 6em;
-    margin-bottom: 0.5em;
+    display: inline-block;
+    width: 10em;
+    font-weight: bold;
 }
 
-input[type="text"], input[type="email"] {
+input[type="text"], 
+input[type="email"], 
+input[type="date"], 
+select {
     width: 15em;
-    margin-left: 0.5em;
-    margin-bottom: 0.5em;
-}
-
-br {
-    clear: both;
+    padding: 4px;
 }
 
 #submit {
-    margin-left: 0.5em;
+    margin-top: 1em;
+    margin-left: 10.5em;  /* canh nút theo input */
+    padding: 6px 12px;
+    font-weight: bold;
 }

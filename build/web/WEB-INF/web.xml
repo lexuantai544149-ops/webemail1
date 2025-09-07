@@ -5,4 +5,21 @@
 	 xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
 	 version="6.0">
 
+ <!-- Khai báo servlet -->
+    <servlet>
+        <servlet-name>SurveyServlet</servlet-name>
+        <servlet-class>com.webapp.SurveyServlet</servlet-class>
+    </servlet>
+
+    <!-- Mapping servlet -->
+    <servlet-mapping>
+        <servlet-name>SurveyServlet</servlet-name>
+        <url-pattern>/survey</url-pattern>
+    </servlet-mapping>
+
+    <!-- Trang mặc định -->
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+    </welcome-file-list>
+
 </web-app>

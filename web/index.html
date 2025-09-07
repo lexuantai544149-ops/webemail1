@@ -1,29 +1,76 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <title>Murach's Java Servlets and JSP</title>
-    <link rel="stylesheet" href="styles/main.css" type="text/css"/>
+    <title>Survey</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="main.css">
 </head>
 <body>
-    <h1>Join our email list</h1>
-    <p>To join our email list, enter your name and 
-       email address below.</p>
-    
-    <form action="emailList" method="post">
-        <input type="hidden" name="action" value="add">
-        
-        <label>First Name:</label>
-        <input type="text" name="firstName" required><br>
-        
-        <label>Last Name:</label>
-        <input type="text" name="lastName" required><br>
-        
-        <label>Email:</label>
-        <input type="email" name="email" required><br>
-        
-        <label>&nbsp;</label>
-        <input type="submit" value="Join Now" id="submit">
+<div class="container">
+    <!-- Logo Murach -->
+    <img src="images/murach_logo.jpg" alt="Murach Logo" width="80">
+
+    <h1>Survey</h1>
+    <p>If you have a moment, we'd appreciate it if you would fill out this survey.</p>
+
+    <form id="surveyForm" action="survey" method="post">
+        <h2>Your information:</h2>
+
+        <div class="form-group">
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" name="firstName" required>
+        </div>
+
+        <div class="form-group">
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" name="lastName" required>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="form-group">
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" required>
+        </div>
+
+        <h2>How did you hear about us?</h2>
+        <input type="radio" name="hear" value="search"> Search engine<br>
+        <input type="radio" name="hear" value="word" checked> Word of mouth<br>
+        <input type="radio" name="hear" value="social"> Social Media<br>
+        <input type="radio" name="hear" value="other"> Other<br>
+
+        <h2>Would you like to receive announcements about new CDs and special offers?</h2>
+        <input type="checkbox" name="announce" value="yes1"> YES, I'd like that.<br>
+        <input type="checkbox" name="announce" value="yes2"> YES, please send me email announcements.<br>
+
+        <div class="form-group">
+            <label for="contact">Please contact me by:</label>
+            <select id="contact" name="contact">
+                <option>Email or postal mail</option>
+                <option>Email only</option>
+                <option>Postal mail only</option>
+            </select>
+        </div>
+
+        <input id="submit" type="submit" value="Submit">
     </form>
+</div>
+
+<script>
+document.getElementById("surveyForm").addEventListener("submit", function(e) {
+    let first = document.getElementById("firstName").value.trim();
+    let last = document.getElementById("lastName").value.trim();
+    let email = document.getElementById("email").value.trim();
+    let dob = document.getElementById("dob").value.trim();
+
+    if (!first || !last || !email || !dob) {
+        alert("Please fill in all required fields before submitting.");
+        e.preventDefault(); // chặn submit
+    }
+});
+</script>
 </body>
 </html>
